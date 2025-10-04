@@ -6,47 +6,47 @@
 
 
         <title>Portfolio</title>
-
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="global.css">
     </head>
     <body>
-        <div class="wrapper">
-            <div class="heading">
-                <div class="line-1">
-                    Hello, I'm
-                    <span>Ibrahim</span>.
-                </div>
-                <div class="line-2">I'm a full stack software devloper.</div>
-
-                <a href="#about" class="heading-link">
-                    <div class="heading-btn">
-                        
-                        View my work
-
+        <section class="home min-h-screen" id="home">
+            <div class="wrapper">
+                <div class="heading">
+                    <div class="line-1">
+                        Hello, I'm <span class="text-accent font-semibold">Ibrahim</span>.
                     </div>
-                </a>
-            </div>
-        </div>
+                    <div class="line-2">I'm a full stack software developer.</div>
 
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+                    <a href="#about" class="heading-link">
+                        <div class="heading-btn">View my work</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="sticky top-0 z-50 bg-grey-400 text-white shadow-md">
+            <ul class="flex justify-around py-4 list-none px-4">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </nav>
-        <div class="main"></div>
+
+
 
         <section class="about" id="about">
             <h2 class="section-heading">About</h2>
-            <div class="about-content">
+                <div class="about-content">
                     <div class="profile">
                         <div class="about-icon">
                             <svg class="profile-icon" viewBox="20 10 70 70" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" stop-color="#0011ff" />
-                                    <stop offset="50%" stop-color="#a529d2" />
-                                    <stop offset="100%" stop-color="#ff15cc" />
+                                    <stop offset="50%" stop-color="#ae00ff" />
+                                    <stop offset="100%" stop-color="#ff006a" />
                                     </linearGradient>
                                 </defs>
 
