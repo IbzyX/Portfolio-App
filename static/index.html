@@ -1,12 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="=UTF-8">
+        <meta name="vewiport" content="width=device-width", inital-scale="1.0">
+
+
         <title>Portfolio</title>
 
         <link rel="stylesheet" href="global.css">
     </head>
     <body>
-        <h1>Portfolio</h1>
+        <div class="wrapper">
+            <div class="heading">
+                <div class="line-1">
+                    Hello, I'm
+                    <span>Ibrahim</span>.
+                </div>
+                <div class="line-2">I'm a full stack software devloper.</div>
+
+                <a href="#about" class="heading-link">
+                    <div class="heading-btn">
+                        
+                        View my work
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="main"></div>
+
+        <section class="about" id="about">
+            <h2 class="section-heading">About</h2>
+            <div class="about-content">
+                    <div class="profile">
+                        <div class="about-icon">
+                            <svg class="profile-icon" viewBox="20 10 70 70" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#0011ff" />
+                                    <stop offset="50%" stop-color="#a529d2" />
+                                    <stop offset="100%" stop-color="#ff15cc" />
+                                    </linearGradient>
+                                </defs>
+
+                                <!-- Head -->
+                                <circle cx="50" cy="30" r="15" fill="none" stroke="url(#profileGradient)" stroke-width="4" />
+
+                                <!-- Shoulders -->
+                                <path d="M30,70 Q50,50 70,70" fill="none" stroke="url(#profileGradient)" stroke-width="4" />
+                            </svg>
+                        </div>
+                        <p class="about-me">
+                            I'm a self-taught software developer with a foundation in programming from school and University. 
+                            Over time, i discovered my passion for building full-stack application from the ground up and continuously improve my skills along the way. 
+                            what drives me is solving real problems through technology and identifying challenges, experimenting with solutions and turning ideas into working products. 
+                        </p>
+                    </div>
+                    <div class="skills">
+                        <div class="skills-row">
+                            <div class="skills-item">
+                                <img src="img/node.png" alt="Node.js">
+                                <div class="skills-name">Node.js</div>
+                            </div>
+                            <div class="skills-item">
+                                <img src="img/python.png" alt="Python">
+                                <div class="skills-name">Python</div>
+                            </div>
+                            <div class="skills-item">
+                                <img src="img/postgresql.png" alt="PostgreSQL">
+                                <div class="skills-name">PostgreSQL</div>
+                            </div>
+                        </div>
+
+                        <div class="skills-row">
+                            <div class="skills-item">
+                                <img src="img/js.png" alt="JavaScript">
+                                <div class="skills-name">JavaScript</div>
+                            </div>
+                            <div class="skills-item">
+                                <img src="img/html.png" alt="HTML">
+                                <div class="skills-name">HTML</div>
+                            </div>
+                            <div class="skills-item">
+                                <img src="img/css.png" alt="CSS">
+                                <div class="skills-name">CSS</div>
+                            </div>
+                            <div class="skills-item">
+                                <img src="img/tailwind.png" alt="Tailwind">
+                                <div class="skills-name">Tailwind</div>
+                            </div>
+                        </div>
+
+                        <div class="skills-row">
+                            <div class="skills-item">
+                                <img src="img/reacts.png" alt="React.js">
+                                <div class="skills-name">React.js</div>
+                            </div>
+                            <div class="skills-item">
+                                <img src="img/git.png" alt="Git">
+                                <div class="skills-name">Git</div>
+                            </div>
+                            <div class="skills-item">
+                                <img src="img/api.png" alt="API">
+                                <div class="skills-name">API</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="projects" id="projects">
+            <h2 class="section-heading">Projects</h2>
+            <div class="project-content">
+
+            </div>
+        </section>
+        <section class="contact" id="contact"></section>
 
 
         <script src="scripts.js"></script>
