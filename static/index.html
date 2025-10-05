@@ -127,7 +127,12 @@
 
                 <div class="project project-left">
                     <div class="project-image">
-                        <img src="img/ProjectMakerAI.png" alt="ProjectMakerAI">
+                        <div class="slide ProjectMakerAI">
+                            <img src="img/projectmakerai2.png" alt="Slide 1">
+                        </div>
+                        <div class="slide ProjectMakerAI">
+                            <img src="img/ProjectMakerAI.png" alt="Slide 2">
+                        </div>
                     </div>
                     <div class="project-description">
                         <h3><strong>Project Maker AI</strong></h3>
@@ -142,7 +147,12 @@
 
                 <div class="project project-right">
                     <div class="project-image">
-                        <img src="img/financeTrackerProject.png" alt="FinanceTracker">
+                        <div class="slide FinanceTracker">
+                            <img src="img/financeTrackerProject.png" alt="Slide 1">
+                        </div>
+                        <div class="slide FinanceTracker">
+                            <img src="img/financeTrackerP2.png" alt="Slide 2">
+                        </div>
                     </div>
                     <div class="project-description">
                         <h3><strong>Finance Tracker</strong></h3>
@@ -157,7 +167,12 @@
 
                 <div class="project project-left">
                     <div class="project-image">
-                        <img src="img/portfolio.png" alt="portfolio">
+                        <div class="slide Portfolio">
+                            <img src="img/portfolioV2.png" alt="Slide 1">
+                        </div>
+                        <div class="slide Portfolio">
+                            <img src="img/portfolio_about.png" alt="Slide 2">
+                        </div>
                     </div>
                     <div class="project-description">
                         <h3><strong>Tech Portfolio</strong></h3>
@@ -177,7 +192,24 @@
 
         <section class="contact" id="contact">
             <h2 class="section-heading">Contact</h2>
-            
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-slot">
+                    <input type="text" name="name" id="name" placeholder="Your Name" required>
+                </div>
+                
+                <div class="form-slot">
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-slot">
+                    <textarea name="message" name="message" placeholder="Your message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+                
+                <p id="formStatus"></p>
+            </form>
         </section>
 
 
