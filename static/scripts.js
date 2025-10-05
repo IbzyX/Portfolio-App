@@ -28,9 +28,12 @@ const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
 
 let particles = [];
-let mouse = { x: 0, y: 0 };
+let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let lastMoveTime = Date.now();
+let hasExploded = false;
+
 const particleCount = 1200;
-const interactionRadius = 400;
+const interactionRadius = 300;
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -56,23 +59,23 @@ class Particle {
     this.x += this.vx;
     this.y += this.vy;
 
-    // Wrap around edges
+    // Wrap around screen edges
     if (this.x < 0) this.x = canvas.width;
     if (this.x > canvas.width) this.x = 0;
     if (this.y < 0) this.y = canvas.height;
     if (this.y > canvas.height) this.y = 0;
 
-    // Magnetic effect toward mouse
-    let dx = this.x - mouse.x;
-    let dy = this.y - mouse.y;
-    let dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist < interactionRadius) {
-      let force = (interactionRadius - dist) / interactionRadius;
-      this.vx += (dx / dist) * force * -0.6;
-      this.vy += (dy / dist) * force * -0.6;
+    // Repel slightly from mouse while it's moving
+    const dx = this.x - mouse.x;
+    const dy = this.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < interactionRadius && !hasExploded) {
+      const force = (interactionRadius - dist) / interactionRadius;
+      this.vx += (dx / dist) * force * -0.4;
+      this.vy += (dy / dist) * force * -0.4;
     }
 
-    // Slow damping for smoother motion
+    // Smooth slowdown
     this.vx *= 0.98;
     this.vy *= 0.98;
   }
@@ -92,10 +95,29 @@ function initParticles() {
   }
 }
 
+function explodeParticles() {
+  // Give every particle a push outward from the mouse
+  for (let p of particles) {
+    const dx = p.x - mouse.x;
+    const dy = p.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy) + 0.001;
+    const force = 7 / dist; // stronger force near the mouse
+    p.vx += (dx / dist) * force;
+    p.vy += (dy / dist) * force;
+  }
+}
+
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "rgba(15, 15, 15, 0.3)";
+  ctx.fillStyle = "rgba(15, 15, 15, 0.25)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Detect idle state
+  const now = Date.now();
+  if (now - lastMoveTime > 1000 && !hasExploded) {
+    explodeParticles();
+    hasExploded = true;
+  }
 
   particles.forEach((p) => {
     p.move();
@@ -108,6 +130,8 @@ function animate() {
 window.addEventListener("mousemove", (e) => {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
+  lastMoveTime = Date.now();
+  hasExploded = false; // reset explosion trigger
 });
 
 initParticles();
