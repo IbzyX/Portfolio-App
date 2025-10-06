@@ -17,3 +17,5 @@ Thumbs.db
 
 # VS code settings
 .vscode/
+
+server.local.js
