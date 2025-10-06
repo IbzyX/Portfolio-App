@@ -409,7 +409,7 @@ textarea {
 }
 input:focus,
 textarea:focus {
-/*    border-image: var(--accent-gradient) 1;*/
+/*    border-image: var(--t-gradient) 1;*/
     background-color: #343434;
 }
 textarea {
@@ -422,7 +422,7 @@ textarea {
     font-size: 1.2rem;
     font-weight: 600;
     color: white;
-    background-color: none; 
+    background-color: none; /* Inner background */
     border-radius: 8px;
     cursor: pointer;
     z-index: 0;
@@ -488,36 +488,41 @@ textarea {
     font-size: 0.70rem;
 }
 .back-to-top {
-    position: absolute;
-    top: -35px;
-    transform: rotate(-90deg);
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: -35px;
+  transform: rotate(-90deg);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 55px;
-    height: 55px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--accent-color);
-    text-decoration: none;
+  width: 55px;
+  height: 55px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  text-decoration: none;
 
-    background: transparent;
-    border-radius: 20%;
-    border: 3px solid;
+  background: transparent;
+  border-radius: 20%;
+  border: 3px solid; /* Thickness of border */
 
-    border-image-slice: 1;
-    border-image-source: var(--accent-gradient);
+  /* Apply gradient border */
+  border-image-slice: 1;
+  border-image-source: var(--accent-gradient);
 
-    box-sizing: border-box;
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .back-to-top:hover {
-    color: #ff00c8;
-    box-shadow: 0 0 10px rgba(255, 0, 200, 0.4);
+  color: #ff00c8;
+  box-shadow: 0 0 10px rgba(255, 0, 200, 0.4);
 }
 
+/*
+background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
