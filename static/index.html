@@ -90,7 +90,7 @@
                                 <div class="skills-name">JavaScript</div>
                             </div>
                             <div class="skills-item">
-                                <img src="img/html.png" alt="HTML">
+                                <img src="img/HTML.png" alt="HTML">
                                 <div class="skills-name">HTML</div>
                             </div>
                             <div class="skills-item">
@@ -145,10 +145,10 @@
                     <div class="project-description">
                         <h3><strong>Project Maker AI</strong></h3>
                         <p>Instantly build a project scaffold utilizing AI.</p>
-                        <p><strong>Tech Stack:</strong> Python, HTML, JavaScript, CSS, OpenAI API</p>
+                        <p><strong>Tech Stack:</strong> Python (Flask), JavaScript, HTML, CSS, OpenAI API</p>
                         <div class="links">
-                            <a href="https://projectmakerai.onrender.com/" class="link">LIVE APP</a>
-                            <a href="https://github.com/IbzyX/ProjectMakerAI" class="link">LEARN MORE</a>
+                            <a href="https://projectmakerai.onrender.com/" class="link" target="_blank">LIVE APP</a>
+                            <button class="link learn-more" data-project="projectMakerAI">LEARN MORE</button>
                         </div>
                     </div>
                 </div>
@@ -165,10 +165,10 @@
                     <div class="project-description">
                         <h3><strong>Finance Tracker</strong></h3>
                         <p>Track and analyze your expenses with real-time insights.</p>
-                        <p><strong>Tech Stack:</strong> Python, HTML, CSS, JavaScript, React.js</p>
+                        <p><strong>Tech Stack:</strong> Python (Flask), JavaScript, HTML, CSS, Chart.js, TrueLayer API</p>
                         <div class="links">
-                            <a href="#" class="link">LIVE APP</a>
-                            <a href="https://github.com/IbzyX/FinanceTracker" class="link">LEARN MORE</a>
+                            <a href="#" class="link" target="_blank">LIVE APP</a>
+                            <button class="link learn-more" data-project="financeTracker">LEARN MORE</button>
                         </div>
                     </div>
                 </div>
@@ -185,10 +185,10 @@
                     <div class="project-description">
                         <h3><strong>Tech Portfolio</strong></h3>
                         <p></p>
-                        <p><strong>Tech Stack:</strong> Node.js, HTML, CSS, JavaScript, Express.js, Tailwind</p>
+                        <p><strong>Tech Stack:</strong>  Node.js, Express.js, JavaScript, HTML, CSS, Tailwind, Nodemailer</p>
                         <div class="links">
                             <a href="#" class="link">Live APP</a>
-                            <a href="https://github.com/IbzyX/Portfolio-App" class="link">LEARN MORE</a>
+                            <button class="link learn-more" data-project="portfolio">LEARN MORE</button>
                         </div>
                     </div>
                 </div>
@@ -223,16 +223,22 @@
         <div class="footer">
             <a href="#home" class="back-to-top">&gt;&gt;</a>
             <div class="footer-link">
-                <a href="https://github.com/IbzyX">
+                <a href="https://github.com/IbzyX" target="_blank">
                     <img src="img/github.png">
                 </a>
-                <a herf="">
+                <a href="https://drive.google.com/file/d/1Ue6EjES4IGq0XRxlh4CpLSBwYY6OLbNl/view?usp=sharing" target="_blank">
                     <img src="img/cv.png">
                 </a>
             </div>
             <p>IBRAHIM RAHMAN ©2025</p>
         </div>
 
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
 
         <script src="scripts.js"></script>
     </body>
