@@ -43,8 +43,12 @@ let shockwave = {
   y: 0
 };
 
-const particleCount = 1400;
-const interactionRadius = 350;
+// Detect if the device has a touchscreen
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+// Adjust particle count for mobile/tablet
+const particleCount = isTouchDevice ? 300 : 1400;
+const interactionRadius = isTouchDevice ? 200 : 350;
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -158,13 +162,26 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-window.addEventListener("mousemove", (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+function updateMousePosition(x, y) {
+  mouse.x = x;
+  mouse.y = y;
   lastMoveTime = Date.now();
   hasExploded = false;
+}
+
+// Desktop mouse support
+window.addEventListener("mousemove", (e) => {
+  updateMousePosition(e.clientX, e.clientY);
 });
 
+// Touchscreen support
+window.addEventListener("touchmove", (e) => {
+  if (e.touches && e.touches.length > 0) {
+    updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
+  }
+});
+
+// Start
 initParticles();
 animate();
 
